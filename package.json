@@ -10,7 +10,7 @@
   "scripts": {
     "prepare": "husky install",
     "start": "yarn start:prod",
-    "start:prod": "ENV=production NODE_ENV=production fastify start -l info -p $PORT src/index.js",
+    "start:prod": "ENV=production NODE_ENV=production node src/server.js",
     "start:dev": "ENV=dev NODE_ENV=dev fastify start -w -l info -P -p 8080 src/index.js",
     "clean": "chmod +x clean && ./clean",
     "lint": "eslint . --fix && prettier --write ./src",
