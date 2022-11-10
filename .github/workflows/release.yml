@@ -1,0 +1,78 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+      - name: Package
+        run: |
+          npm i
+          npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PACKAGES_TOKEN}}
+
+  tag:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Publish Tags
+        run: |
+          VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | sed 's/ //g')
+          git tag $VERSION
+          git push origin --tags
+
+  patch:
+    needs: tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: |
+          echo "
+          const fs = require('fs');
+          const app = require('./package.json');
+          const releaseCode = app.version.split('.').map((v) => parseInt(v, 10));
+          releaseCode[2] += 1;
+          app.version = releaseCode.map((n) => n.toString()).join('.');
+          fs.writeFileSync('./package.json', JSON.stringify(app, null, 2));
+          " > updateVersion.js
+          node updateVersion.js
+          git config --global user.email "dev.secops@techinsiderbrasil.com"
+          git config --global user.name "Automation"
+          git add .
+          git commit -m "(chore): update version"
+          git push -u origin
+
+  release:
+    needs: patch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Create Release
+        run: |
+          VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | sed 's/ //g')
+          DATA='{"tag_name":"'$VERSION'","target_commitish":"main","name":"'$VERSION'","body":"automated release","draft":false,"prerelease":false}'
+          curl --header 'Authorization: Bearer ${{ secrets.NPM_PACKAGES_TOKEN }}' --data "$DATA" "https://api.github.com/repos/techinsiderbrasil/omie-integration/releases"
