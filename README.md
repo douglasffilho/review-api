@@ -34,7 +34,7 @@
 
 ## :dart: About ##
 
-A five start product review API
+A five star product review API
 
 ## :sparkles: Features ##
 

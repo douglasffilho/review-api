@@ -1,7 +1,7 @@
 {
   "name": "review-api",
   "version": "1.0.0",
-  "description": "A five start raview API",
+  "description": "A five star product review API",
   "main": "src/index.js",
   "repository": "git@github.com:douglasffilho/review-api.git",
   "author": "Douglas Filho <douglasf.filho@gmail.com>",
