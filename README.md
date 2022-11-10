@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./.github/logo-omie.png" alt="Serverless Omie Integration" />
+  <img src="./.github/review.webp" alt="Review API" />
 
   &#xa0;
 </div>
