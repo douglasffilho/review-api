@@ -27,7 +27,7 @@
   <a href="#mag_right-testing">Testing</a> &#xa0; | &#xa0;
   <a href="#pencil2-commit-changes">Commit Changes</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/techinsiderbrasil" target="_blank">Author</a>
+  <a href="https://github.com/douglasffilho" target="_blank">Author</a>
 </p>
 
 <br>
