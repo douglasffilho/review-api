@@ -10,8 +10,8 @@
   "scripts": {
     "prepare": "husky install",
     "start": "yarn start:prod",
-    "start:prod": "ENV=production NODE_ENV=production fastify start -l info -p 8080 src/index.js",
-    "start:dev": "ENV=dev NODE_ENV=dev fastify start -w -l info -P -p $PORT src/index.js",
+    "start:prod": "ENV=production NODE_ENV=production fastify start -l info -p $PORT src/index.js",
+    "start:dev": "ENV=dev NODE_ENV=dev fastify start -w -l info -P -p 8080 src/index.js",
     "clean": "chmod +x clean && ./clean",
     "lint": "eslint . --fix && prettier --write ./src",
     "test": "jest --coverage --forceExit --detectOpenHandles"
@@ -28,31 +28,31 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "17.1.2",
-    "@commitlint/config-conventional": "17.1.0",
+    "@commitlint/cli": "17.2.0",
+    "@commitlint/config-conventional": "17.2.0",
     "@types/jest": "29.2.2",
-    "eslint": "8.24.0",
+    "eslint": "8.27.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-standard": "17.0.0",
     "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-jest": "27.1.1",
+    "eslint-plugin-jest": "27.1.4",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-promise": "6.0.1",
+    "eslint-plugin-promise": "6.1.1",
     "git-cz": "4.9.0",
-    "husky": "8.0.1",
+    "husky": "8.0.2",
     "jest": "29.3.1",
     "lint-staged": "13.0.3",
     "prettier": "2.7.1"
   },
   "dependencies": {
-    "@fastify/autoload": "5.4.0",
-    "@fastify/cors": "8.1.0",
+    "@fastify/autoload": "5.4.1",
+    "@fastify/cors": "8.2.0",
     "@fastify/sensible": "5.1.1",
-    "eslint-plugin-n": "15.3.0",
-    "fastify": "4.7.0",
-    "fastify-cli": "5.5.0",
-    "fastify-plugin": "4.2.1"
+    "eslint-plugin-n": "15.5.1",
+    "fastify": "4.9.2",
+    "fastify-cli": "5.5.1",
+    "fastify-plugin": "4.3.0"
   },
   "engines": {
     "node": "16"
