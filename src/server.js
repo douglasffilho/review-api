@@ -9,7 +9,10 @@ const server = fastify({
 
 server.register(app)
 
-server.listen({ port: process.env.PORT ?? 8080, host: '0.0.0.0' }, (err) => {
+const PORT = process.env.PORT
+console.log(`will listen at ${PORT}`)
+
+server.listen({ port: PORT ?? 8080, host: '0.0.0.0' }, (err) => {
   if (err) {
     server.log.error(err)
     throw err
