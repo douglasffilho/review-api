@@ -17,11 +17,9 @@
 
   <img alt="License" src="https://img.shields.io/badge/License-MIT-yellow.svg">
 
-  <a href="https://review-api.cyclic.sh" rel="nofollow">
+  <a href="https://review-api.up.railway.app" rel="nofollow">
     <img alt="Github top language" src="https://img.shields.io/badge/Open_URL_&#8599;-blue.svg">
   </a>
-
-  [![Deploy to Cyclic](https://deploy.cyclic.sh/button.svg)](https://deploy.cyclic.sh/)
 </div>
 
 <p align="center">
