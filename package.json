@@ -53,8 +53,5 @@
     "fastify": "4.9.2",
     "fastify-cli": "5.5.1",
     "fastify-plugin": "4.3.0"
-  },
-  "engines": {
-    "node": "16"
   }
 }
