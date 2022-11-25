@@ -1,4 +1,0 @@
-[start]
-cmd = "yarn start"
-[deploy.startCommand]
-cmd = "yarn start"
