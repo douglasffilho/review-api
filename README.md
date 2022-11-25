@@ -11,7 +11,7 @@
     <img alt="Github top language" src="https://img.shields.io/badge/Fastify-4.x-green.svg">
   </a>
 
-  <img alt="Github top language" src="https://img.shields.io/badge/NodeJS-16.17.1-green.svg">
+  <img alt="Github top language" src="https://img.shields.io/badge/NodeJS-16.17.0-green.svg">
 
   <img alt="Commitlint" src="https://img.shields.io/badge/commitlint-&check;-green.svg">
 
