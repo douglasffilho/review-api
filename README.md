@@ -3,6 +3,7 @@
 
   &#xa0;
 </div>
+<a href="https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fcoder%2Fdeploy-code-server&amp;envs=PASSWORD%2CGIT_REPO&amp;optionalEnvs=GIT_REPO&amp;PASSWORDDesc=Your+password+to+log+in+to+code-server&amp;GIT_REPODesc=A+git+repo+to+auto-clone+and+open+in+code-server+%28e.g+https%3A%2F%2Fgithub.com%2Fcoder%2Fdocs%29" rel="nofollow"><img src="https://camo.githubusercontent.com/081df3dd8cff37aab35044727b02b94a8e948052487a8c6253e190f5940d776d/68747470733a2f2f7261696c7761792e6170702f627574746f6e2e737667" alt="Deploy on Railway" data-canonical-src="https://railway.app/button.svg" style="max-width: 100%;"></a>
 
 <h1 align="center">Review API</h1>
 
